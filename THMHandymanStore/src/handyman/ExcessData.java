@@ -21,6 +21,7 @@ public class ExcessData
 	 static String url = "jdbc:mysql://localhost:3306/thmstore";
 	 static String password = "thabang";
 	 static String username = "root";
+	 static String DriverPath = "com.mysql.jdbc.Driver"; 
 	 static int vID,pID,vOrderNo,pOnHand,pReorderLevel;
 	 static String vName,vCoNum,vProvince,Desc;
 	static double pUnitPrice;
@@ -32,7 +33,8 @@ public class ExcessData
 	
 		try
 		{
-			Class.forName("com.mysql.jdbc.Driver");
+			//Changed here: 
+			Class.forName(DriverPath);
 			cn = (Connection)DriverManager.getConnection(url,username,password);
 			
 			if (cn!=null)
